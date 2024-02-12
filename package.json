@@ -1,0 +1,33 @@
+{
+    "name": "recipeBox",
+    "version": "1.0.0",
+    "private": true,
+    "devDependencies": {
+        "babel-eslint": "^8.0.2",
+        "eslint": "^4.12.1",
+        "eslint-plugin-react": "^7.5.1",
+        "react-scripts": "0.7.0",
+        "shelljs": "^0.7.8",
+        "surge": "^0.19.0"
+    },
+    "dependencies": {
+        "@types/react": "^16.0.25",
+        "bootstrap": "^3.3.7",
+        "prop-types": "^15.6.0",
+        "re-base": "2.3.0",
+        "react": "15.3.2",
+        "react-bootstrap": "^0.31.5",
+        "react-dom": "15.3.2",
+        "react-router": "4.0.0-alpha.3"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test --env=jsdom",
+        "eject": "react-scripts eject",
+        "copy": "node bin/copy-for-deploy.js",
+        "predeploy": "npm run build && npm run copy",
+        "deploy": "surge --project ./build --domain prstbt-recipes-box.surge.sh",
+        "push": "git push && npm run deploy"
+    }
+}
